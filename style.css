@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    color: #fff;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #000;
+}
+
+.container{
+    position: relative;
+}
+.clock{
+    display: flex;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.1);
+    /* background-image: url("nature.jpg"); */
+    background-position: center top;
+    border: 4px solid rgba(64, 5, 242);
+    box-shadow: 0 0 30px rgba(255,255,255,0.2);
+    justify-content: center;
+    align-items:center;
+
+}
+
+.clock span{
+    font-weight: bold;
+    position:absolute;
+    
+    /* to rotate the numbers */
+    transform: rotate(calc(30deg * var(--i)));
+    inset: 12px;
+
+    text-align: center;
+    
+
+}
+.clock span b{
+    transform: rotate(calc(-30deg * var(--i)));
+    display: inline-block;
+    font-size: 30px;
+    z-index: 10;
+}
+
+.clock::before{
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #5e14dd;
+    z-index: 10;
+}
+
+.hand{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    z-index: 3;
+}
+.hand i {
+    position: absolute;
+    background-color: var(--clr);
+    width: var(--wt);
+    height: var(--ht);
+    border-radius: 8px;
+   
+}
+
+
+.clock img{
+    position: relative;
+    bottom: 19px;
+    right: 1.2px;
+    z-index: 2;
+}
